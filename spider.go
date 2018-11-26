@@ -54,7 +54,7 @@ func main() {
 
 	// result := getUrl("http://referendum.2018.nat.gov.tw/pc/zh_TW/08/67000000100000000.html")
 	// getTrTFromHTML(result)
-	topic := 7
+	topic := 1
 	f, err := os.OpenFile(fmt.Sprintf("%d.csv", topic), os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
 		fmt.Println("err:", err)
@@ -87,7 +87,7 @@ func runResult(topic int, limit int, out io.Writer) {
 
 				// for j, _ := range list {
 				// for k, _ := range
-				result := getResult(6, thrAreaUrl[i][j][k])
+				result := getResult(topic, thrAreaUrl[i][j][k])
 				label := []string{
 					firAreaName[i],
 					thrAreaName[i][j],
